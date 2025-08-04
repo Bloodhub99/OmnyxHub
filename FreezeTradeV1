@@ -1,0 +1,47 @@
+-- Trade Assist GUI - Ultra Realistic Pink Theme
+
+--// Services
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local tweenService = game:GetService("TweenService")
+local userInput = game:GetService("UserInputService")
+
+--// Screen GUI
+local TradeAssistGUI = Instance.new("ScreenGui")
+TradeAssistGUI.Name = "TradeAssistGUI"
+TradeAssistGUI.ResetOnSpawn = false
+TradeAssistGUI.IgnoreGuiInset = true
+TradeAssistGUI.Parent = playerGui
+
+--// Main Frame
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.AnchorPoint = Vector2.new(0.5, 0)
+MainFrame.Position = UDim2.new(0.5, 0, 0.25, 0)
+MainFrame.Size = UDim2.new(0.3, 0, 0.7, 0)
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 192, 203) -- Pink
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Parent = TradeAssistGUI
+Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 12)
+
+-- Update all relevant UI colors
+local function applyUltraPinkTheme()
+    TopBar.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
+    CloseButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+    MinimizeButton.BackgroundColor3 = Color3.fromRGB(255, 160, 180)
+    PlayerIconFrame.BackgroundColor3 = Color3.fromRGB(255, 200, 210)
+    PlayerIcon.BackgroundColor3 = Color3.fromRGB(255, 220, 230)
+    UsernameBox.BackgroundColor3 = Color3.fromRGB(255, 192, 203)
+    FreezeButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+    ForceTradeButton.BackgroundColor3 = Color3.fromRGB(255, 160, 180)
+    AutoAcceptButton.BackgroundColor3 = Color3.fromRGB(255, 182, 193)
+    CreditLabel.TextColor3 = Color3.fromRGB(200, 100, 150)
+end
+
+-- Update credit text
+CreditLabel.Text = "Created by Shyy | Fixed by SIGMA @rizzify101"
+
+-- Call after all UI created:
+applyUltraPinkTheme()
